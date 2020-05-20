@@ -1,4 +1,4 @@
-function thresh = make_gvtd_hist(gvtdTimeTrace, plotThresh, threshType,...
+function thresh = make_gvtd_hist(gvtdTimeTrace, plotThresh, statType,...
     nStd, binSize)
 
 % Description:
@@ -7,15 +7,25 @@ function thresh = make_gvtd_hist(gvtdTimeTrace, plotThresh, threshType,...
 % based on find_gvtd_thresh(gvtdTt, StatType.Histogram_Mode, nStd)
 % default values.
 %
+% Dependencies: StatType
+% StatType is an enumeration that provides all possible options for
+% calculating the GVTD threshold. "StatType.Histogram_Mode" was used in 
+% the original paper.
+%
 %  Inputs:
 %     gvtdTimeTrace = GVTD time trace (assumes gvtdTt is a 1*n array)
+%
+%     plotThresh = the option for plotting the gvtd threshold on the plot
+%
+%     statType = which statistic of the GVTD time trace you want to use for
+%                setting the threshold. statType is a member of the StatType
+%                enumeration. Default statType is mode plus the distance
+%                between the samllest GVTD value and mode.
 %
 %     nStd = number of left standard deviation for the GVTD motion
 %     threshold (if any statType besides "Default" is chosen.
 %
 %     binSize = Size of histogram bin. The default value is 0.000035
-%
-%     plotThresh = the option for plotting the gvtd threshold on the plot
 
 % Outputs:
 %    GVTD histogram plot
@@ -24,7 +34,7 @@ function thresh = make_gvtd_hist(gvtdTimeTrace, plotThresh, threshType,...
 % Author: Arefeh Sherafati (sherafati.arefeh@gmail.com)
 
 if isempty(plotThresh), plotThresh = 1; end
-if isempty(threshType), plotThresh = 1; end
+if isempty(statType), statType = StatType.Histogram_Mode; end
 
 if isempty(binSize)
     
@@ -47,7 +57,7 @@ if plotThresh
     
     if isempty(nStd), nStd = 4; end
 
-    thresh = find_gvtd_thresh(gvtdTimeTrace, threshType, nStd);
+    thresh = find_gvtd_thresh(gvtdTimeTrace, statType, nStd);
 
     hold on;
     [N, ~] = histcounts(gvtdTimeTrace);
