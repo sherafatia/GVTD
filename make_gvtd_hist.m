@@ -4,8 +4,7 @@ function thresh = make_gvtd_hist(gvtdTimeTrace, plotThresh, threshType,...
 % Description:
 %
 % This function plots a GVTD histogram as well as its motion threshold
-% based on either a previously calculated thershold, or a default threshold
-% based on find_gvtd_thresh(gvtdTt, StatType.Default)
+% based on find_gvtd_thresh(gvtdTt, StatType.Histogram_Mode, nStd)
 % default values.
 %
 %  Inputs:
@@ -18,12 +17,14 @@ function thresh = make_gvtd_hist(gvtdTimeTrace, plotThresh, threshType,...
 %
 %     plotThresh = the option for plotting the gvtd threshold on the plot
 
-% Output:
-%     GVTD histogram plot
+% Outputs:
+%    GVTD histogram plot
+%    thresh = GVTD threshold
 
 % Author: Arefeh Sherafati (sherafati.arefeh@gmail.com)
 
 if isempty(plotThresh), plotThresh = 1; end
+if isempty(threshType), plotThresh = 1; end
 
 if isempty(binSize)
     

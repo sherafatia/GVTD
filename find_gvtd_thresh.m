@@ -8,7 +8,7 @@ function thresh = find_gvtd_thresh(gvtdTimeTrace, statType, nStd)
 % Dependencies: StatType
 % StatType is an enumeration that provides all possible options for
 % calculating the GVTD threshold. "StatType.Histogram_Mode" was used in 
-% the Original paper.
+% the original paper.
 %
 %  Inputs:
 %     gvtdTimeTrace = GVTD time-trace (assumes gvtdTimeTrace is a 1*n or
@@ -44,11 +44,11 @@ if (statType ~= StatType.Default) && (~exist('numStd', 'var'))
     nStd = 10;
 end
 
-%% 
+ 
 switch statType
     
     case StatType.Default
-         % For making the histogram of the GVTD values, we chose to have at
+        % For making the histogram of the GVTD values, we chose to have at
         % 5 counts in each bin (minCountsEachBin): 
         minCountsEachBin = 5; 
         
@@ -60,7 +60,7 @@ switch statType
         % each run and the number of bins:
         del = max(gvtdTimeTrace(:)) / nBins; 
         
-        % Hiscounts is used for finding the bin centers and the edges
+        % histcounts is used for finding the bin centers and the edges
         [N, edges] = histcounts (gvtdTimeTrace, 'BinWidth', del);
         
         % Mode of the histogram is defined as the (left) edge of the bin
@@ -94,7 +94,7 @@ switch statType
         % each run and the number of bins:
         del = max(gvtdTimeTrace(:)) / nBins; 
         
-        % Hiscounts is used for finding the bin centers and the edges
+        % histcounts is used for finding the bin centers and the edges
         [N, edges] = histcounts (gvtdTimeTrace, 'BinWidth', del);
         
         % Mode of the histogram is defined as the (left) edge of the bin
@@ -135,9 +135,7 @@ switch statType
         leftStdRun = sqrt(rmsPointBelowMode / numPointsBelowMode);
         
         thresh = runMode + nStd * leftStdRun;
-        
-%   case StatType.Normalized_GVTD
-        
+                
     case StatType.Parabolic_Mode  
         
         % To approximate the bin with maximum value (mode), we can
