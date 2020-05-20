@@ -14,26 +14,29 @@ This repository contains code for calculating and optimizing GVTD-based motion t
 > Sherafati A, Eggebrecht AT, Burns-Yocum TM, Culver JP. A novel global metric to detect motion artifacts in optical neuroimaging data. fNIRS Conference, Oct. 2016.
 
 # Usage
-> gvtd.m calculates the GVTD time-trace of your data matrix (measurements by time)
+`gvtd` calculates the GVTD time-trace of your data matrix (measurements by time)
+#### Example:
 
-GVTD = gvtd(dataMatrix)
+    GVTD = gvtd(dataMatrix)
 
-> find_gvtd_thresh.m finds the GVTD censoring threshold based on different methods.
-Dependencies: StatType
-StatType is an enumeration that provides all possible options for calculating the GVTD threshold. "StatType.Histogram_Mode" was used in the original paper.
+`find_gvtd_thresh` finds the GVTD censoring threshold based on different methods.
+Dependencies: `StatType`
+`StatType` is an enumeration that provides all possible options for calculating the GVTD threshold. `StatType.Histogram_Mode` was used in the original paper.
 
-Example:
-statType = 'StatType.Histogram_Mode';
-nStd = 3;
-thresh = find_gvtd_thresh(gvtdTimeTrace, statType, nStd)
+#### Example:
+      
+    statType = 'StatType.Histogram_Mode';
+    nStd = 3;
+    thresh = find_gvtd_thresh(gvtdTimeTrace, statType, nStd)
 
-> make_gvtd_hist.m plots a GVTD histogram as well as the motion threshold based on find_gvtd_thresh.m
+`make_gvtd_hist` plots a GVTD histogram as well as the motion threshold based on `find_gvtd_thresh`.
 
-thresh = make_gvtd_hist(gvtdTimeTrace, plotThresh, statType, nStd, binSize)
-Example:
-statType = 'StatType.Histogram_Mode';
-nStd = 3;
-thresh = make_gvtd_hist(gvtdTimeTrace, '', statType, nStd, '')
+    thresh = make_gvtd_hist(gvtdTimeTrace, plotThresh, statType, nStd, binSize)
+#### Example:
+
+    statType = 'StatType.Histogram_Mode';
+    nStd = 3;
+    thresh = make_gvtd_hist(gvtdTimeTrace, '', statType, nStd, '')
 
 License
 ----
