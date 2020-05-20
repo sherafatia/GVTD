@@ -15,17 +15,20 @@ This repository contains code for calculating and optimizing GVTD-based motion t
 
 # Usage
 > gvtd.m calculates the GVTD time-trace of your data matrix (measurements by time)
+
 GVTD = gvtd(dataMatrix)
 
 > find_gvtd_thresh.m finds the GVTD censoring threshold based on different methods.
 Dependencies: StatType
 StatType is an enumeration that provides all possible options for calculating the GVTD threshold. "StatType.Histogram_Mode" was used in the original paper.
+
 Example:
 statType = 'StatType.Histogram_Mode';
 nStd = 3;
 thresh = find_gvtd_thresh(gvtdTimeTrace, statType, nStd)
 
 > make_gvtd_hist.m plots a GVTD histogram as well as the motion threshold based on find_gvtd_thresh.m
+
 thresh = make_gvtd_hist(gvtdTimeTrace, plotThresh, statType, nStd, binSize)
 Example:
 statType = 'StatType.Histogram_Mode';
