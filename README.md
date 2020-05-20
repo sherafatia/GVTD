@@ -17,7 +17,7 @@ This repository contains code for calculating and optimizing GVTD-based motion t
 `gvtd` calculates the GVTD time-trace of your data matrix (measurements by time)
 #### Example:
 
-    GVTD = gvtd(dataMatrix)
+    gvtdTimeTrace = gvtd(dataMatrix)
 
 `find_gvtd_thresh` finds the GVTD censoring threshold based on different methods.
 Dependencies: `StatType`
