@@ -29,8 +29,6 @@ function thresh = find_gvtd_thresh(gvtdTimeTrace, statType, nStd)
 %     thresh = GVTD motion detection threshold
 
 % Author: Arefeh Sherafati (sherafati.arefeh@gmail.com)
-% This function is in progress. In case of any errors or suggestions
-% please email me.
 
 %% Make sure GVTD is a row vector
 if size(gvtdTimeTrace, 2) == 1
@@ -200,25 +198,3 @@ switch statType
         error('Unknown stat "%s"', StatType);
 end
 
-% Revision History:
-%{
-2018-05-03
- A. Sherafati modified binSize from 1e-7 to 1e-20.
-2018-06-22
- A. Sherafati modified find_gvtd_threshold to calculate the left std based
- on each statistic, instead of only 'mode'.
-2018-09-18
- A. Sherafati added the 'mode' calculation based on the parabolic
-interpolation (Avi's method). 
-2018-12-1
- A. Sherafati automated the binsize calculation. 
-2019-2-15
- A. Sherafati modified the std for Mean and Median cases to be the left
- standard deviation similar to other cases.
-2019-7-11
-A. Sherafati added a condition for transposing the coloumn vector or a row
-vector.
-2019-11-18
-A. Sherafati added a case "Default" that calculates the threshold based on
-mode + the distance between the minimum GVTD value and the mode.
-%}

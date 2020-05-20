@@ -16,9 +16,6 @@ function GVTD = gvtd(dataMatrix)
 %     gvtd = GVTD time trace (time * 1)
 
 % Author: Arefeh Sherafati (sherafati.arefeh@gmail.com)
-% This function is in progress. In case of any errors or suggestions
-% please email me.
-
 
 % Step 1: Find the matrix of the temporal derivatives
 dataDiff = dataMatrix-circshift(dataMatrix, [0 -1]);

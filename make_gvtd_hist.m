@@ -1,4 +1,4 @@
-function thresh = make_gvtd_hist(gvtdTimeTrace, plot_thresh, threshType,...
+function thresh = make_gvtd_hist(gvtdTimeTrace, plotThresh, threshType,...
     nStd, binSize)
 
 % Description:
@@ -16,16 +16,14 @@ function thresh = make_gvtd_hist(gvtdTimeTrace, plot_thresh, threshType,...
 %
 %     binSize = Size of histogram bin. The default value is 0.000035
 %
-%     plot_thresh = the option for plotting the gvtd threshold on the plot
+%     plotThresh = the option for plotting the gvtd threshold on the plot
 
 % Output:
 %     GVTD histogram plot
 
 % Author: Arefeh Sherafati (sherafati.arefeh@gmail.com)
-% This function is in progress. In case of any errors or suggestions
-% please email me.
 
-if isempty(plot_thresh), plot_thresh = 1; end
+if isempty(plotThresh), plotThresh = 1; end
 
 if isempty(binSize)
     
@@ -44,7 +42,7 @@ end
 figure;
 histogram (gvtdTimeTrace, 'BinEdges', 0:binSize:max(gvtdTimeTrace(:)));
 
-if plot_thresh
+if plotThresh
     
     if isempty(nStd), nStd = 4; end
 
@@ -59,8 +57,3 @@ end
 title('GVTD Histogram')
 xlabel('GVTD');
 ylabel('Counts')
-
-%{Revision history
-% 2019-11-15 AS added the option for ploting the gvtd threshold and changed
-% the "thresh" t0 "nSTD" for setting the threhsold.
-%}
