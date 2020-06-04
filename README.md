@@ -1,5 +1,5 @@
 # GVTD
-Global Variance of Temporal Derivatives (GVTD) is a motion detection metric for multi-channel Imaging techniques inspired by the DVARS metric in fMRI.
+Global Variance of Temporal Derivatives (GVTD) is a motion detection metric for multi-channel imaging techniques inspired by the DVARS metric in fMRI.
 
 This repository contains code for calculating and optimizing GVTD-based motion tracking for High-density Diffuse Optical Tomography (HD-DOT) introduced in the follwoing preprint and Conference presentations:
 
