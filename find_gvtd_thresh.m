@@ -40,7 +40,7 @@ if nargin < 2
     statType = StatType.Default;
 end
 
-if (statType ~= StatType.Default) && (~exist('numStd', 'var')) 
+if (statType ~= StatType.Default) && (~exist('nStd', 'var')) 
     nStd = 10;
 end
 
