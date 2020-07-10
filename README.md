@@ -1,9 +1,11 @@
 # GVTD
 Global Variance of Temporal Derivatives (GVTD) is a motion detection metric for multi-channel imaging techniques inspired by the DVARS metric in fMRI.
 
-This repository contains code for calculating and optimizing GVTD-based motion tracking for High-density Diffuse Optical Tomography (HD-DOT) introduced in the follwoing preprint and Conference presentations:
+This repository contains code for calculating and optimizing GVTD-based motion tracking for High-density Diffuse Optical Tomography (HD-DOT) introduced in the follwoing papers and Conference presentations:
 
-> Sherafati A, Snyder AZ, Eggebrecht AT, Bergonzi KM, Burns-Yocum TM, Lugar HM, Ferradal SL, Robichaux-Viehoever A, Smyser CD, Palanca BJ, Hershey T, Culver JP. Global motion detection and censoring in High-density diffuse optical tomography. bioRxiv, Cold Spring Harbor Laboratory, March 2020 https://www.biorxiv.org/content/10.1101/2020.02.22.961219v1
+> Sherafati A, Snyder AZ, Eggebrecht AT, Bergonzi KM, Burns-Yocum TM, Lugar HM, Ferradal SL, Robichaux-Viehoever A, Smyser CD, Palanca BJ, Hershey T, Culver JP. Global motion detection and censoring in high-density diffuse optical tomography. Human Brain Mapping. July 2020 https://onlinelibrary.wiley.com/doi/abs/10.1002/hbm.25111
+
+> Sherafati A, Snyder AZ, Eggebrecht AT, Bergonzi KM, Burns-Yocum TM, Lugar HM, Ferradal SL, Robichaux-Viehoever A, Smyser CD, Palanca BJ, Hershey T, Culver JP. Global motion detection and censoring in high-density diffuse optical tomography. bioRxiv, Cold Spring Harbor Laboratory, March 2020 https://www.biorxiv.org/content/10.1101/2020.02.22.961219v1
 
 > Sherafati A, Eggebrecht AT, Bergonzi KM, Burns-Yocum TM, Culver JP. Automated motion artifact detection and censoring in optical neuroimaging data. Neural Imaging and Sensing, SPIE Photonics West, Feb. 2019.
 
