@@ -36,7 +36,7 @@ Dependencies: `StatType`
     thresh = make_gvtd_hist(gvtdTimeTrace, plotThresh, statType, nStd, binSize)
 #### Example:
 
-    statType = 'StatType.Histogram_Mode';
+    statType = StatType.Histogram_Mode;
     nStd = 3;
     thresh = make_gvtd_hist(gvtdTimeTrace, '', statType, nStd, '')
 
