@@ -27,7 +27,7 @@ Dependencies: `StatType`
 
 #### Example:
       
-    statType = 'StatType.Histogram_Mode';
+    statType = StatType.Histogram_Mode;
     nStd = 3;
     thresh = find_gvtd_thresh(gvtdTimeTrace, statType, nStd)
 
