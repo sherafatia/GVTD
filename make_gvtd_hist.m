@@ -66,5 +66,5 @@ if plotThresh
 
 end
 title('GVTD Histogram')
-xlabel('GVTD');
+xlabel('GVTD')
 ylabel('Counts')
