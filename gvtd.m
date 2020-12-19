@@ -6,7 +6,7 @@ function gvtdTimeTrace = gvtd(dataMatrix)
 % measurements by time.
 
 % Global Variance of Temporal Derivatives (GVTD) is a motion detection 
-% metric for multi-channel Imaging techniques inspired by the DVARS metric
+% metric for multi-channel imaging techniques inspired by the DVARS metric
 % in fMRI.
 %
 %  Input:
